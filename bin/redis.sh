@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 
-dep_url=https://github.com/phpredis/phpredis.git
 redis_dir=phpredis
 echo "-----> Installing Redis..."
 
 ### Redis
 echo "[LOG] Downloading Redis"
-git clone $dep_url -q
+git clone -b php7 https://github.com/phpredis/phpredis.git -q
 if [ ! -d "$redis_dir" ]; then
   echo "[ERROR] Failed to find php redis directory $redis_dir"
   exit
 fi
 
 cd $redis_dir
-git checkout php7
 
-sudo apt-get install php5-dev
+apt-get install php5-dev
 phpize
 ./configure
 make && make install
