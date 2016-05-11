@@ -273,5 +273,6 @@ install_blackfire_ext
 install_newrelic_ext
 install_newrelic_userini
 
-# redis setup
+# add custom steps
 source $bp_dir/bin/redis.sh
+source $bp_dir/bin/memcached.sh
