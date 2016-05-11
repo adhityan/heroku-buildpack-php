@@ -12,8 +12,6 @@ if [ ! -d "$redis_dir" ]; then
 fi
 
 cd $redis_dir
-
-apt-get install php5-dev
 phpize
 ./configure
 make && make install
