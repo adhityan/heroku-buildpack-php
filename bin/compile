@@ -275,4 +275,5 @@ install_newrelic_userini
 
 # add custom steps
 source $bp_dir/bin/redis.sh
+source $bp_dir/bin/libmemcached.sh
 source $bp_dir/bin/memcached.sh
