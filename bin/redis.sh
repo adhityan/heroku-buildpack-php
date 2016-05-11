@@ -15,7 +15,6 @@ fi
 cd $redis_dir
 git checkout php7
 
-apt-get install php5-dev
 phpize
 ./configure
 make && make install
