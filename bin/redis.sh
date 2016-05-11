@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-redis_dir=phpredis
+dir=phpredis
 echo "-----> Installing Redis..."
 
 ### Redis
 echo "[LOG] Downloading Redis"
 git clone -b php7 https://github.com/phpredis/phpredis.git -q
-if [ ! -d "$redis_dir" ]; then
-  echo "[ERROR] Failed to find php redis directory $redis_dir"
+if [ ! -d "$dir" ]; then
+  echo "[ERROR] Failed to find php redis directory $dir"
   exit
 fi
 
-cd $redis_dir
+cd $dir
 phpize
 ./configure
 make && make install
@@ -21,5 +21,5 @@ make && make install
 # make
 # make install
 
-echo "important extension redis into php.ini"
+echo "adding redis.so into php.ini"
 echo "extension=redis.so" >> /app/.heroku/php/etc/php/php.ini
